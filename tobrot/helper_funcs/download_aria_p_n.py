@@ -44,7 +44,7 @@ async def aria_start():
     aria2_daemon_start_cmd.append("--conf-path=/app/tobrot/aria2/aria2.conf")
     aria2_daemon_start_cmd.append("--allow-overwrite=true")
     aria2_daemon_start_cmd.append("--daemon=true")
-    aria2_daemon_start_cmd.append(f"--dir={DOWNLOAD_LOCATION}")
+    #aria2_daemon_start_cmd.append(f"--dir={DOWNLOAD_LOCATION}")
     # TODO: this does not work, need to investigate this.
     # but for now, https://t.me/TrollVoiceBot?start=858
     aria2_daemon_start_cmd.append("--enable-rpc")
