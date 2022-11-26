@@ -143,7 +143,7 @@ def url_link_generate(text_url: str):
         return bypass_vip(text_url)
     elif "rocklinks.net" in text_url:
         return rocklinks(text_url)
-    elif "olamovies.ink" in text_url:
+    elif "olamovies.cyou" in text_url:
         return olamovies(text_url)
     else:
         raise DirectDownloadLinkException(f'UnSupported URL : {text_url}')
