@@ -12,7 +12,7 @@ import json
 import hashlib
 import re
 import urllib.parse
-import lk21
+
 import requests
 import cfscrape
 import cloudscraper
@@ -52,46 +52,12 @@ def url_link_generate(text_url: str):
         return osdn(text_url)
     elif 'github.com' in text_url:
         return github(text_url)
-    elif 'hxfile.co' in text_url:
-        return hxfile(text_url)
-    elif 'anonfiles.com' in text_url:
-        return anonfiles(text_url)
-    elif 'letsupload.io' in text_url:
-        return letsupload(text_url)
-    elif 'fembed.net' in text_url:
-        return fembed(text_url)
-    elif 'fembed.com' in text_url:
-        return fembed(text_url)
-    elif 'femax20.com' in text_url:
-        return fembed(text_url)
-    elif 'fcdn.stream' in text_url:
-        return fembed(text_url)
-    elif 'feurl.com' in text_url:
-        return fembed(text_url)
-    elif 'naniplay.nanime.in' in text_url:
-        return fembed(text_url)
-    elif 'naniplay.nanime.biz' in text_url:
-        return fembed(text_url)
-    elif 'naniplay.com' in text_url:
-        return fembed(text_url)
-    elif 'layarkacaxxi.icu' in text_url:
-        return fembed(text_url)
-    elif 'sbembed.com' in text_url:
-        return sbembed(text_url)
-    elif 'streamsb.net' in text_url:
-        return sbembed(text_url)
-    elif 'sbplay.org' in text_url:
-        return sbembed(text_url)
     elif 'racaty.net' in text_url:
         return racaty(text_url)
     elif '1drv.ms' in text_url:
         return onedrive(text_url)
     elif 'pixeldrain.com' in text_url:
         return pixeldrain(text_url)
-    elif 'antfiles.com' in text_url:
-        return antfiles(text_url)
-    elif 'streamtape.com' in text_url:
-        return streamtape(text_url)
     elif 'bayfiles.com' in text_url:
         return anonfiles(text_url)
     elif '1fichier.com' in text_url:
@@ -341,62 +307,11 @@ def onedrive(link: str) -> str:
     return dl_link
 
 
-def hxfile(url: str) -> str:
-    """ Hxfile direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_filesIm(url)
-    return dl_url
 
 
-def anonfiles(url: str) -> str:
-    """ Anonfiles direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_anonfiles(url)
-    return dl_url
 
 
-def letsupload(url: str) -> str:
-    """ Letsupload direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    dl_url = ''
-    try:
-        link = re.findall(r'\bhttps?://.*letsupload\.io\S+', url)[0]
-    except IndexError:
-        raise DirectDownloadLinkException("No Letsupload links found\n")
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_url(link)
-    return dl_url
 
-
-def fembed(link: str) -> str:
-    """ Fembed direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_fembed(link)
-    lst_link = []
-    count = len(dl_url)
-    for i in dl_url:
-        lst_link.append(dl_url[i])
-    return lst_link[count-1]
-
-
-def sbembed(link: str) -> str:
-    """ Sbembed direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_sbembed(link)
-    lst_link = []
-    count = len(dl_url)
-    for i in dl_url:
-        lst_link.append(dl_url[i])
-    return lst_link[count-1]
 
 
 def pixeldrain(url: str) -> str:
@@ -412,22 +327,6 @@ def pixeldrain(url: str) -> str:
         raise DirectDownloadLinkException("ERROR: Cant't download due {}.".format(resp.text["value"]))
 
 
-def antfiles(url: str) -> str:
-    """ Antfiles direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_antfiles(url)
-    return dl_url
-
-
-def streamtape(url: str) -> str:
-    """ Streamtape direct link generator
-    Based on https://github.com/zevtyardt/lk21
-             https://github.com/SlamDevs/slam-mirrorbot """
-    bypasser = lk21.Bypass()
-    dl_url=bypasser.bypass_streamtape(url)
-    return dl_url
 
 
 def racaty(url: str) -> str:
