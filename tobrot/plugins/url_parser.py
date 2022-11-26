@@ -115,7 +115,7 @@ async def bypass_link(text_url: str):
         or "sharer.pw" in text_url \
         or any(x in text_url for x in bypass_vip_list) \
         or "rocklinks.net" in text_url \
-        or "olamovies.ink" in text_url:
+        or "olamovies.cyou" in text_url:
         try:
             url_string = url_link_generate(text_url)
             return False, q(url_string, safe=':/')
