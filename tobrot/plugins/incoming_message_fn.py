@@ -156,7 +156,6 @@ async def incoming_message_f(client: Client, message: Message, auto_cmd=None):
         dl_url, cf_name, _, _ = await extract_link(message, "LEECH")
         user_command = auto_cmd
         rep_mess = message.reply_to_message
-    elif rep_mess == message.reply_to_message:
         file_name = ''
         if rep_mess.media:
             file = [rep_mess.document, rep_mess.video, rep_mess.audio]
