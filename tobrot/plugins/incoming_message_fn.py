@@ -131,6 +131,7 @@ async def incoming_message_f(client: Client, message: Message, auto_cmd=None):
     i_m_sefg = await message.reply_text("<code>Processing ... 🔄</code>", quote=True)
     is_file = False
     dl_url = ''
+    rep_mess =''
     cf_name = ''
     if AUTO_LEECH and not auto_cmd:
         _auto = AUTO_USERS.get(g_id, [True, None])
@@ -155,7 +156,7 @@ async def incoming_message_f(client: Client, message: Message, auto_cmd=None):
     elif AUTO_LEECH and auto_cmd:
         dl_url, cf_name, _, _ = await extract_link(message, "LEECH")
         user_command = auto_cmd
-        rep_mess = message.reply_to_message
+    elif rep_mess = message.reply_to_message:
         file_name = ''
         if rep_mess.media:
             file = [rep_mess.document, rep_mess.video, rep_mess.audio]
