@@ -330,7 +330,7 @@ for a in app:
 
 isUserPremium = False
 if STRING_SESSION:
-    if userBot := Client(
+    if userBot == Client(
         "Tele-UserBot",
         api_id=APP_ID[0],
         api_hash=API_HASH[0],
