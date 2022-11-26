@@ -36,6 +36,8 @@ from tobrot.helper_funcs.display_progress import TimeFormatter
 sys.setrecursionlimit(10 ** 4)
 
 async def aria_start():
+    TRACKERS = check_output("curl -Ns https://raw.githubusercontent.com/XIU2/TrackersListCollection/master/all.txt https://ngosang.github.io/trackerslist/trackers_all_http.txt https://newtrackon.com/api/all https://raw.githubusercontent.com/hezhijie0327/Trackerslist/main/trackerslist_tracker.txt | awk '$0' | tr '\n\n' ','", shell=True).decode('utf-8').rstrip(',')
+    #aria2_daemon_start_cmd = ["chrome", "--conf-path=/app/tobrot/aria2/aria2.conf", f"--rpc-listen-port={ARIA_TWO_STARTED_PORT}", f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}", f"--bt-tracker=[{TRACKERS}]"]
     aria2_daemon_start_cmd = []
     # start the daemon, aria2c command
     aria2_daemon_start_cmd.append("aria2c")
@@ -58,6 +60,7 @@ async def aria_start():
     aria2_daemon_start_cmd.append("--max-overall-upload-limit=2M")
     aria2_daemon_start_cmd.append("--split=16")
     aria2_daemon_start_cmd.append(f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}")
+    aria2_daemon_start_cmd.append(f"--bt-tracker=[{TRACKERS}]") 
     #
     LOGGER.info(aria2_daemon_start_cmd)
 
