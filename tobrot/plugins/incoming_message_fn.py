@@ -156,12 +156,12 @@ async def incoming_message_f(client: Client, message: Message, auto_cmd=None):
     elif AUTO_LEECH and auto_cmd:
         dl_url, cf_name, _, _ = await extract_link(message, "LEECH")
         user_command = auto_cmd
-    elif rep_mess = message.reply_to_message:
+    elif message.reply_to_message:
         file_name = ''
-        if rep_mess.media:
-            file = [rep_mess.document, rep_mess.video, rep_mess.audio]
+        if message.reply_to_message.media:
+            file = [message.reply_to_message.document, message.reply_to_message.video, message.reply_to_message.audio]
             file_name = [fi for fi in file if fi is not None][0].file_name
-        if not rep_mess.media or str(file_name).lower().endswith(".torrent"):
+        if not message.reply_to_message.media or str(file_name).lower().endswith(".torrent"):
             dl_url, cf_name, _, _ = await extract_link(message.reply_to_message, "LEECH")
             LOGGER.info(dl_url)
             LOGGER.info(cf_name)
