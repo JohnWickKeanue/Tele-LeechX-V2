@@ -148,25 +148,25 @@ CUSTOM_PREFIX = getVar("CUSTOM_PREFIX", "")
 CUSTOM_SUFFIX = getVar("CUSTOM_SUFFIX", "")
 
 #Bot Command [Leech]  >>>>>>>>>>>
-LEECH_COMMAND = getVar("LEECH_COMMAND", "leech")
-LEECH_UNZIP_COMMAND = getVar("LEECH_UNZIP_COMMAND", "extract")
-LEECH_ZIP_COMMAND = getVar("LEECH_ZIP_COMMAND", "archive")
-GLEECH_COMMAND = getVar("GLEECH_COMMAND", "gleech")
-GLEECH_UNZIP_COMMAND = getVar("GLEECH_UNZIP_COMMAND", "gleechunzip")
-GLEECH_ZIP_COMMAND = getVar("GLEECH_ZIP_COMMAND", "gleechzip")
+LEECH_COMMAND = getVar("LEECH_COMMAND", "l")
+LEECH_UNZIP_COMMAND = getVar("LEECH_UNZIP_COMMAND", "uzl")
+LEECH_ZIP_COMMAND = getVar("LEECH_ZIP_COMMAND", "zl")
+GLEECH_COMMAND = getVar("GLEECH_COMMAND", "m")
+GLEECH_UNZIP_COMMAND = getVar("GLEECH_UNZIP_COMMAND", "uzm")
+GLEECH_ZIP_COMMAND = getVar("GLEECH_ZIP_COMMAND", "zm")
 
 #Bot Command [yt-dlp] >>>>>>>>>>>
-YTDL_COMMAND = getVar("YTDL_COMMAND", "ytdl")
-GYTDL_COMMAND = getVar("GYTDL_COMMAND", "gytdl")
+YTDL_COMMAND = getVar("YTDL_COMMAND", "yl")
+GYTDL_COMMAND = getVar("GYTDL_COMMAND", "y")
 PYTDL_COMMAND = getVar("PYTDL_COMMAND", "pytdl")
 GPYTDL_COMMAND = getVar("GPYTDL_COMMAND", "gpytdl")
 
 #Bot Command [RClone]  >>>>>>>>>>>
-DESTINATION_FOLDER = getVar("DESTINATION_FOLDER", "Tele-LeechX")
+DESTINATION_FOLDER = getVar("DESTINATION_FOLDER", "")
 INDEX_LINK = getVar("INDEX_LINK", "")
 VIEW_LINK = getVar("VIEW_LINK", True)
 GET_SIZE_G = getVar("GET_SIZE_G", "getsize")
-CLONE_COMMAND_G = getVar("CLONE_COMMAND_G", "gclone")
+CLONE_COMMAND_G = getVar("CLONE_COMMAND_G", "clone")
 TELEGRAM_LEECH_COMMAND = getVar("TELEGRAM_LEECH_COMMAND", "tleech")
 TELEGRAM_LEECH_UNZIP_COMMAND = getVar("TELEGRAM_LEECH_UNZIP_COMMAND", "tleechunzip")
 
@@ -174,7 +174,7 @@ TELEGRAM_LEECH_UNZIP_COMMAND = getVar("TELEGRAM_LEECH_UNZIP_COMMAND", "tleechunz
 STATUS_COMMAND = getVar("STATUS_COMMAND", "status")
 SAVE_THUMBNAIL = getVar("SAVE_THUMBNAIL", "savethumb")
 CLEAR_THUMBNAIL = getVar("CLEAR_THUMBNAIL", "clearthumb")
-UPLOAD_AS_DOC = getVar("UPLOAD_AS_DOC", "False")
+UPLOAD_AS_DOC = getVar("UPLOAD_AS_DOC", "True")
 LOG_COMMAND = getVar("LOG_COMMAND", "log")
 STATS_COMMAND = getVar("STATS_COMMAND", "stats")
 
@@ -190,7 +190,7 @@ HELP_COMMAND = getVar("HELP_COMMAND", "help")
 SPEEDTEST = getVar("SPEEDTEST", "speedtest")
 TSEARCH_COMMAND = getVar("TSEARCH_COMMAND", "tshelp")
 MEDIAINFO_CMD = getVar("MEDIAINFO_CMD", "mediainfo")
-CAP_STYLE = getVar("CAP_STYLE", "code")
+CAP_STYLE = getVar("CAP_STYLE", "b")
 BOT_NO = getVar("BOT_NO", "")
 USER_DTS = getVar("USER_DTS", True)
 INDEX_SCRAPE = getVar("INDEX_SCRAPE", "indexscrape")
@@ -244,8 +244,8 @@ DEF_ANILIST_TEMPLATE = getVar("ANILIST_TEMPLATE", """<b>{ro_title}</b>({na_title
 <b>Description</b>: <i>{description}</i>""")
 
 #Telegraph Creds  >>>>>>>>>>>
-TGH_AUTHOR = getVar("TGH_AUTHOR ", "Tele-LeechX")
-TGH_AUTHOR_URL = getVar("TGH_AUTHOR_URL", "https://t.me/FXTorrentz")
+TGH_AUTHOR = getVar("TGH_AUTHOR ", "Jack")
+TGH_AUTHOR_URL = getVar("TGH_AUTHOR_URL", "https://t.me/Meejack")
 
 #Bot Command [Bot PM & Log Channel]  >>>>>>>>>>>
 LEECH_LOG = getVar("LEECH_LOG", "")
@@ -279,10 +279,10 @@ RDM_QUOTE = getVar("RDM_QUOTE", "False")
 RDM_QUOTE = True if RDM_QUOTE.lower() == "true" else False
 
 # Buttons in Start Message >>>>>>>>
-START_BTN1 = getVar("START_BTN1", "🛃 FXTorrentz 🛃")
-START_URL1 = getVar("START_URL1", "https://t.me/FXTorrentz")
+START_BTN1 = getVar("START_BTN1", "🛃 Jack 🛃")
+START_URL1 = getVar("START_URL1", "https://t.me/meejack")
 START_BTN2 = getVar("START_BTN2", "🔍 Source Code")
-START_URL2 = getVar("START_URL2", "https://github.com/5MysterySD/Tele-LeechX")
+START_URL2 = getVar("START_URL2", "https://t.me/meejack")
 
 # Database Handler >>>>>>>>
 DB_URI = getVar("DATABASE_URL", "")
