@@ -330,12 +330,7 @@ for a in app:
 
 isUserPremium = False
 if STRING_SESSION:
-        userBot = Client(
-        "Tele-UserBot",
-        api_id=APP_ID[0],
-        api_hash=API_HASH[0],
-        session_string=STRING_SESSION,
-    ):
+        userBot = Client("Tele-UserBot",api_id=APP_ID[0],api_hash=API_HASH[0],session_string=STRING_SESSION)
         userBot.start()
         if (userBot.get_me()).is_premium:
             isUserPremium = True
