@@ -24,6 +24,12 @@ from pyrogram import Client
 
 run(["chmod", "+x", "extract"])
 
+run(["chmod", "+x", "aria.sh"])
+
+run("./aria.sh", shell=True)
+
+
+
 def getVar(var: str, val):
     return environ.get(var, val)
 
