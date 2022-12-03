@@ -450,7 +450,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                     chat_id=int(LEECH_LOG),
                     document=local_file_name,
                     thumb=thumb,
-                    caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                    caption=f"<b>{base_file_name}</b>",
                     parse_mode=enums.ParseMode.HTML,
                     disable_notification=True,
                 )
@@ -472,7 +472,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                             chat_id=int(chat_id), 
                             document=sent_message.document.file_id,
                             thumb=thumb,
-                            caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                            caption=f"<b>{base_file_name}</b>",
                             parse_mode=enums.ParseMode.HTML
                         )
                 except Exception as err:
@@ -586,7 +586,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                             sent_message = await client.send_video(
                                 chat_id=int(LEECH_LOG),
                                 video=local_file_name,
-                                caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                                caption=f"<b>{base_file_name}</b>",
                                 parse_mode=enums.ParseMode.HTML,
                                 duration=duration,
                                 width=width,
@@ -620,7 +620,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                                         video=sent_message.video.file_id,
                                         thumb=thumb,
                                         supports_streaming=True,
-                                        caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                                        caption=f"<b>{base_file_name}</b>",
                                         parse_mode=enums.ParseMode.HTML
                                     )
                             except Exception as err:
@@ -768,7 +768,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                                 chat_id=int(LEECH_LOG),
                                 document=local_file_name,
                                 thumb=thumb,
-                                caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                                caption=f"<b>{base_file_name}</b>",
                                 parse_mode=enums.ParseMode.HTML,
                                 disable_notification=True,
                                 progress=prog.progress_for_pyrogram,
@@ -795,7 +795,7 @@ async def upload_single_file(message, local_file_name, caption_str, from_user, c
                                         chat_id=int(chat_id), 
                                         document=sent_message.document.file_id,
                                         thumb=thumb,
-                                        caption=f"<code>{base_file_name}</code>\n\n♨️ 𝕌𝕡𝕝𝕠𝕒𝕕𝕖𝕕 𝔹𝕪 {UPDATES_CHANNEL} ♨️",
+                                        caption=f"<b>{base_file_name}</b>",
                                         parse_mode=enums.ParseMode.HTML
                                     )
                             except Exception as err:
