@@ -461,6 +461,7 @@ def krakenfiles(page_link: str) -> str:
     else:
         raise DirectDownloadLinkException(
             f"Failed to acquire download URL from kraken for : {page_link}")
+
 def gdtot(url: str) -> str:
     """ Gdtot google drive link generator
     By https://github.com/majnurangeela/BypassBot/blob/main/gdtot.py """
@@ -480,7 +481,7 @@ def gdtot(url: str) -> str:
         'size': info[0],
         'date': info[1]
     }
-    new_gdtot = requests.get("https://new.gdtot.org/").url
+    new_gdtot = requests.get("https://new3.gdtot.cfd/").url
 
     info['src_url'] = url
     res = client.get(f"{new_gdtot}dld?id={url.split('/')[-1]}")
@@ -501,10 +502,13 @@ def gdtot(url: str) -> str:
     try:
         decoded_id = base64.b64decode(str(params['gd'][0])).decode('utf-8')
         gdrive_url = f'https://drive.google.com/open?id={decoded_id}'
-        return gdrive_url
+        info['message'] = 'Success.'
     except:
         info['error'] = True
         return info
+
+    info['gdrive_link'] = gdrive_url
+    return info
 
 def gplink(url):
 
