@@ -18,7 +18,7 @@ import cfscrape
 import cloudscraper
 import time
 import base64
-
+from re import findall as re_findall
 from os import popen
 from random import choice
 from urllib.parse import urlparse, unquote, parse_qs
