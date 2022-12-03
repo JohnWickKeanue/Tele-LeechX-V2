@@ -461,26 +461,50 @@ def krakenfiles(page_link: str) -> str:
     else:
         raise DirectDownloadLinkException(
             f"Failed to acquire download URL from kraken for : {page_link}")
-
-
 def gdtot(url: str) -> str:
     """ Gdtot google drive link generator
-    By https://github.com/xcscxr """
+    By https://github.com/majnurangeela/BypassBot/blob/main/gdtot.py """
 
     if CRYPT is None:
-        raise DirectDownloadLinkException("ERROR: CRYPT cookie not provided")
+        raise DirectDownloadLinkException("ERROR: CRYPT variable not provided")
 
-    match = re_findall(r'https?://(.+)\.gdtot\.(.+)\/\S+\/\S+', url)[0]
+    client = requests.Session()
+    client.cookies.update({ 'crypt': CRYPT })
+    res = client.get(url)
+    title = re.findall(r">(.*?)<\/h5>", res.text)[0]
+    info = re.findall(r'<td\salign="right">(.*?)<\/td>', res.text)
+    info = {
+        'error': True,
+        'message': 'Link Invalid.',
+        'title': title,
+        'size': info[0],
+        'date': info[1]
+    }
+    new_gdtot = requests.get("https://new.gdtot.org/").url
 
-    with requests.session() as client:
-        client.cookies.update({'crypt': CRYPT})
-        client.get(url)
-        res = client.get(f"https://{match[0]}.gdtot.{match[1]}/dld?id={url.split('/')[-1]}")
-    matches = re_findall('gd=(.*?)&', res.text)
-    decoded_id = b64decode(str(matches[0])).decode('utf-8')
-    return decoded_id
+    info['src_url'] = url
+    res = client.get(f"{new_gdtot}dld?id={url.split('/')[-1]}")
+    try:
+        url = re.findall('URL=(.*?)"', res.text)[0]
+        print(url)
+    except:
+        info['message'] = 'The requested URL could not be retrieved.',
+        return info
 
+    params = parse_qs(urlparse(url).query)
 
+    if 'msgx' in params:
+        info['message'] = params['msgx'][0]
+    if 'gd' not in params or not params['gd'] or params['gd'][0] == 'false':
+        return info
+
+    try:
+        decoded_id = base64.b64decode(str(params['gd'][0])).decode('utf-8')
+        gdrive_url = f'https://drive.google.com/open?id={decoded_id}'
+        return gdrive_url
+    except:
+        info['error'] = True
+        return info
 
 def gplink(url):
 
