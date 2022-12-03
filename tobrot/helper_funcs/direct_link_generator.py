@@ -26,6 +26,7 @@ from lxml import etree
 from js2py import EvalJs
 from bs4 import BeautifulSoup
 from base64 import standard_b64encode
+from base64 import b64decode
 
 from tobrot import UPTOBOX_TOKEN, LOGGER, EMAIL, PWSSD, CRYPT, GDRIVE_FOLDER_ID, HUB_CRYPT, DRIVEFIRE_CRYPT, KATDRIVE_CRYPT, KOLOP_CRYPT, DRIVEBUZZ_CRYPT, GADRIVE_CRYPT, LARAVEL_SESSION, XSRF_TOKEN
 from tobrot.helper_funcs.exceptions import DirectDownloadLinkException
