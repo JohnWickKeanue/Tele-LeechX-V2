@@ -49,7 +49,7 @@ if env.get('UPDATE_PACKAGES', 'False').lower() == 'true':
     scall("pip install --upgrade " + ' '.join(packages), shell=True)
 ## Update Packages ----
 
-UPSTREAM_REPO = env.get('UPSTREAM_REPO', "https://github.com/JohnWickKeanue/Tele-LeechX-V2")
+UPSTREAM_REPO = env.get('UPSTREAM_REPO', "https://github.com/Sam-Max/rclone-mirror-leech-telegram-bot")
 UPSTREAM_BRANCH = env.get('UPSTREAM_BRANCH', "h-code")
 try:
     if len(UPSTREAM_REPO) == 0:
