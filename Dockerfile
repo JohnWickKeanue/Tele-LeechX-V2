@@ -1,4 +1,4 @@
-FROM 412314/mltb:heroku
+FROM ubuntu:latest
 
 RUN mkdir ./app
 RUN chmod 777 ./app
